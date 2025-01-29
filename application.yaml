@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    repoURL: https://github.com/Srikanth-c4c/End-to-End-Kubernetes-DevSecOps-Tetris-Project.git
     targetRevision: HEAD
     path: dev
   destination: 
