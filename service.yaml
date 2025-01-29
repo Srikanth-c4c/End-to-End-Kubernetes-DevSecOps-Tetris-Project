@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ram-service
+  namespace: srikanth  # Update with your namespace
+spec:
+  type: NodePort  # Change from LoadBalancer to NodePort
+  selector:
+    app: ram
+  ports:
+    - protocol: TCP
+      port: 80       # Service Port
+      targetPort: 3000  # Your Container Port
+      nodePort: 32000   # Choose a port between 30000-32767 (or let Kubernetes assign one)

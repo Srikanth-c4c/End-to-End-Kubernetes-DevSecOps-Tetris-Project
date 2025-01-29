@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ram-deployment
+  namespace: srikanth  # <-- Add this line
+  labels:
+    app: ram
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ram
+  template:
+    metadata:
+      labels:
+        app: ram
+    spec:
+      containers:
+        - name: ram-container
+          image: 438465133978.dkr.ecr.ap-south-1.amazonaws.com/ram:v1
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ecr-secret
